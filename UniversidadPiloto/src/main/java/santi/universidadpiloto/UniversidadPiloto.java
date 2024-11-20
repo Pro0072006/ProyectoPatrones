@@ -10,6 +10,7 @@ import java.awt.*;
 import Modelos.AdministradorInscripciones;
 import Modelos.Estudiante;
 import Modelos.Materia;
+import Modelos.MateriaConPrerequisito;
 
 /**
  *
@@ -50,6 +51,9 @@ public class UniversidadPiloto extends JFrame {
         admin.agregarMateria(new Materia("Matematicas", "MAT101", "Lunes 8:00 - 10:00", 30));
         admin.agregarMateria(new Materia("Fisica", "FIS101", "Martes 10:00 - 12:00", 25));
         admin.agregarMateria(new Materia("Programacion", "PROG101", "Miércoles 14:00 - 16:00", 20));
+        admin.agregarMateria(
+                new MateriaConPrerequisito(new Materia("Nu", "NU102", "Viernes 10:00 - 13:00", 10),
+                        admin.obtenerMateria("fisica")));
 
         // Crear estudiantes de ejemplo
         admin.registrarEstudiante(new Estudiante("Juan Pérez", "123456", ""));

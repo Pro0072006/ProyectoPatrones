@@ -56,6 +56,7 @@ public class InscripcionVentana extends JDialog {
             // Inscribir al estudiante y notificar
             materia.inscribir(estudiante);
             actualizarComboBoxes(estudianteComboBox, materiaComboBox);
+            resultadoArea.setText("Estudiante inscrito correctamente a la materia " + materiaNombre);
         });
 
         add(inputPanel, BorderLayout.NORTH);

@@ -6,9 +6,9 @@ import interfaces.IMateria;
 import interfaces.IObservador;
 
 public class MateriaDecorador implements IMateria {
-    private Materia materia;
+    private IMateria materia;
 
-    public MateriaDecorador(Materia materia) {
+    public MateriaDecorador(IMateria materia) {
         this.materia = materia;
     }
 
@@ -29,37 +29,36 @@ public class MateriaDecorador implements IMateria {
 
     @Override
     public void inscribir(Estudiante estudiante) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'inscribir'");
+        materia.inscribir(estudiante);
     }
 
     @Override
     public int getCupo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCupo'");
+        return materia.getCupo();
     }
 
     @Override
     public void agregarObservador(IObservador observador) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregarObservador'");
+        materia.agregarObservador(observador);
     }
 
     @Override
     public void notificarObservadores(String mensaje) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'notificarObservadores'");
+        materia.notificarObservadores(mensaje);
     }
 
     @Override
     public void removerObservador(IObservador observador) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removerObservador'");
+        materia.removerObservador(observador);
     }
 
     @Override
     public List<Estudiante> getEstudiantesInscritos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getEstudiantesInscritos'");
+        return materia.getEstudiantesInscritos();
+    }
+
+    @Override
+    public String toString() {
+        return materia.toString();
     }
 }

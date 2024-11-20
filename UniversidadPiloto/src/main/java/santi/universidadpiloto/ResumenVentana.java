@@ -56,7 +56,7 @@ public class ResumenVentana extends JDialog {
 
         for (IMateria materia : materias) {
             resumen.append(materia.toString()).append("\n");
-            for (Estudiante estudiante : ((Materia) materia).getEstudiantesInscritos()) {
+            for (Estudiante estudiante : (materia).getEstudiantesInscritos()) {
                 resumen.append("  - " + estudiante.getNombre()).append("\n");
             }
             resumen.append("\n");

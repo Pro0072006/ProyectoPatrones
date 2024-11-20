@@ -2,11 +2,11 @@ package Modelos;
 
 import interfaces.IMateria;
 
-public class MateriaConPrerequisito extends Materia {
+public class MateriaConPrerequisito extends MateriaDecorador {
     private IMateria prerrequisito;
 
-    public MateriaConPrerequisito(String nombre, String codigo, String horario, int cupo, IMateria prerrequisito) {
-        super(nombre, codigo, horario, cupo);
+    public MateriaConPrerequisito(IMateria materia, IMateria prerrequisito) {
+        super(materia);
         this.prerrequisito = prerrequisito;
     }
 
@@ -27,7 +27,7 @@ public class MateriaConPrerequisito extends Materia {
         return prerrequisito;
     }
 
-    public void setPrerrequisito(Materia prerrequisito) {
+    public void setPrerrequisito(IMateria prerrequisito) {
         this.prerrequisito = prerrequisito;
     }
 

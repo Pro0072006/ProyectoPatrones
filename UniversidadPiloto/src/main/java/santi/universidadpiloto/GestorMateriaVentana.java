@@ -77,7 +77,7 @@ public class GestorMateriaVentana extends JDialog {
                     return;
                 }
 
-                materia = new MateriaConPrerequisito(nombre, codigo, horario, cupo, materiaBusqueda);
+                materia = new MateriaConPrerequisito(new Materia(nombre, codigo, horario, cupo), materiaBusqueda);
             } else {
                 materia = new Materia(nombre, codigo, horario, cupo);
             }
